@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dyanmic Apllication
-    </title>
+    <title>Dynamic Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        p{
+        body {
+            background-color: burlywood;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        p {
             color: red;
         }
-        body{
-            background-color: burlywood;
+        h1 {
+            font-size: 2em;
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+        #colorInput {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 1em;
+        }
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            button {
+                font-size: 0.9em;
+            }
+            #colorInput {
+                font-size: 0.9em;
+            }
         }
     </style>
-    
 </head>
 <body onload="greet()">
-    <h1>HTML,CSS and JAVASCRIPT FUSION</h1>
-    <button onclick="alert('Hello Buwembo David')">click me</button>
-    <p id="text">This is the first HTML,CSS and JAVASCRIPT FUSION</p>
+    <h1>HTML, CSS, and JavaScript Fusion</h1>
+    <button onclick="alert('Hello Buwembo David')">Click me</button>
+    <p id="text">This is the first HTML, CSS, and JavaScript Fusion</p>
     <button onclick="toggleText()">Change text</button>
     <script>
-        let originalText = "This is the first HTML,CSS and JAVASCRIPT FUSION";
+        let originalText = "This is the first HTML, CSS, and JavaScript Fusion";
         let newText = "I am changing the text";
         let isOriginal = true;
 
@@ -33,45 +61,39 @@
             isOriginal = !isOriginal;
         }
     </script>
-    <button id="click">internal javascript</button>
+    <button id="click">Internal JavaScript</button>
 
     <input type="text" id="colorInput" placeholder="Enter a color">
     <button onclick="backgroundchange()">Change background</button>
     <script>
         function greet() {
-           alert('Hello Buwembo David, Welcome to the world of programming');
+            alert('Hello Buwembo David, Welcome to the world of programming');
         }
         const buttonid = document.getElementById('click');
-         buttonid.onclick = function(){
-            alert('button clicked')   
+        buttonid.onclick = function() {
+            alert('Button clicked');
         }
-         buttonid.onmouseover =function(){ 
-             buttonid.style.color = "red"}
-             buttonid.onmouseout =function(){ 
-                 buttonid.style.color = "blue"
+        buttonid.onmouseover = function() { 
+            buttonid.style.color = "red";
+        }
+        buttonid.onmouseout = function() { 
+            buttonid.style.color = "blue";
         }
         function backgroundchange() {
             const colorInput = document.getElementById('colorInput').value;
             if (colorInput) {
-            try {
-                document.body.style.backgroundColor = colorInput;
-                if (document.body.style.backgroundColor === '') {
-                throw new Error('Invalid color');
+                try {
+                    document.body.style.backgroundColor = colorInput;
+                    if (document.body.style.backgroundColor === '') {
+                        throw new Error('Invalid color');
+                    }
+                } catch (e) {
+                    alert('Invalid color');
                 }
-            } catch (e) {
-                alert('Invalid color');
-            }
             } else {
-            alert('Please enter a color');
+                alert('Please enter a color');
             }
         }
-        
-        
-        
     </script>
 </body>
-
-
-
-
 </html>
